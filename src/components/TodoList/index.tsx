@@ -1,6 +1,7 @@
 import { FC, ReactElement, useCallback, useReducer } from "react";
-import Input from "./Input";
+import TdInput from "./Input";
 import { ACTION_TYPE, IState, ITodo } from "./interfaces";
+import TdList from "./List";
 import { todoReducer } from "./reducer";
 
 const initialState: IState = {
@@ -8,25 +9,33 @@ const initialState: IState = {
 }
 
 const TodoList: FC = (): ReactElement => {
-
-    // const [todoList, setTodoList] = useState<ITodo[]>([])
-
     const [state, dispatch] = useReducer(todoReducer, initialState)
 
-    const addTodo = useCallback((todo: ITodo) => {
-        console.log(todo)
+    const addTodo = useCallback((todo: ITodo): void => {
         dispatch({
             type: ACTION_TYPE.ADD_TODO,
             payload: todo
         })
-        // setTodoList(todoList => [...todoList, todo])
+    }, [])
+
+    const removeTodo = useCallback((id: number): void => {
+
+    }, [])
+
+    const toggleTodo = useCallback((id: number): void => {
+
     }, [])
 
     return (
         <>
-            <Input
+            <TdInput
                 addTodo={addTodo}
                 todoList={state.todoList}
+            />
+            <TdList
+                todoList={state.todoList}
+                removeTodo={removeTodo}
+                toggleTodo={toggleTodo}
             />
         </>
     )
