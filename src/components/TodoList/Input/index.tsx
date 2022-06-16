@@ -6,7 +6,7 @@ interface IProps {
     todoList: ITodo[];
 }
 
-const Input: FC<IProps> = ({
+const TdInput: FC<IProps> = ({
     addTodo,
     todoList,
 }): ReactElement => {
@@ -38,4 +38,4 @@ const Input: FC<IProps> = ({
     )
 }
 
-export default Input;
+export default TdInput;
