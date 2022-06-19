@@ -1,6 +1,8 @@
 # TodoList
 ## 介绍
 基于 React Hook + TypeScript 实现的基础 TodoList
+## 效果演示
+![todo list](./src/images/final.png)
 ## 组件划分
     1. App 组件
     2. TodoList 组件
