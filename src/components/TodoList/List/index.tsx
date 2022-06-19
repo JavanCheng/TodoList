@@ -1,6 +1,7 @@
 import { FC, ReactElement } from "react";
 import { ITodo } from "../interfaces";
 import TdItem from "./Item";
+import "./index.css"
 
 interface IProps {
     todoList: ITodo[];
@@ -14,7 +15,7 @@ const TdList: FC<IProps> = ({
     toggleTodo,
 }): ReactElement => {
     return (
-        <div>
+        <div className="todo-list">
             {
                 todoList && todoList.map((todo: ITodo) => {
                     return (

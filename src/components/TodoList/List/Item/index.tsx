@@ -1,5 +1,6 @@
 import { FC, ReactElement } from "react";
 import { ITodo } from "../../interfaces";
+import './index.css';
 
 interface IProps {
     todo: ITodo;
@@ -14,18 +15,20 @@ const TdItem: FC<IProps> = ({
 }): ReactElement => {
     const { id, content, completed } = todo;
     return (
-        <div>
+        <div className="todo-item">
             <input
                 type='checkbox'
                 checked={completed}
                 onChange={() => toggleTodo(id)}
+                className="item-checkbox"
             />
             <span
                 style={{ textDecoration: completed ? 'line-through' : 'none' }}
+                className="item-text"
             >
                 {content}
             </span>
-            <button onClick={() => removeTodo(id)}>清除</button>
+            <button onClick={() => removeTodo(id)} className="delete-button">删除</button>
         </div>
     )
 

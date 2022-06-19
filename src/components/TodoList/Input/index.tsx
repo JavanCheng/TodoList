@@ -1,5 +1,6 @@
 import { FC, ReactElement, useRef } from "react";
 import { ITodo } from "../interfaces";
+import './index.css'
 
 interface IProps {
     addTodo: (todo: ITodo) => void;
@@ -31,9 +32,14 @@ const TdInput: FC<IProps> = ({
     }
 
     return (
-        <div>
-            <input type="text" placeholder="请输入待办项" ref={inputRef}></input>
-            <button onClick={addItem}>增加</button>
+        <div className="todo-input">
+            <input 
+                type="text" 
+                placeholder="请输入待办项" 
+                ref={inputRef} 
+                className="add-input" 
+            />
+            <button onClick={addItem} className="add-button">添加</button>
         </div>
     )
 }

@@ -1,0 +1,15 @@
+.todo-input {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.add-input {
+    width: 75%;
+}
+
+.add-button {
+    width: 15%;
+}

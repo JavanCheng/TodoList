@@ -1,0 +1,9 @@
+.todo {
+    width: 300px;
+    height: 500px;
+    display: flex;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+}

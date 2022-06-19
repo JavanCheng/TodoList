@@ -3,6 +3,7 @@ import TdInput from "./Input";
 import { ACTION_TYPE, IState, ITodo } from "./interfaces";
 import TdList from "./List";
 import { todoReducer } from "./reducer";
+import './index.css'
 
 // 惰性初始化，通过一个函数生成 initialState， 不执行就没有 state
 function init(initTodoList: ITodo[]): IState {
@@ -15,7 +16,7 @@ const TodoList: FC = (): ReactElement => {
     const [state, dispatch] = useReducer(todoReducer, [], init)
 
     useEffect(() => {
-        const todoList = JSON.parse(localStorage.getItem('todolist') || '');
+        const todoList = JSON.parse(localStorage.getItem('todolist') || '[]');
         // 开发环境会 render 两次，影响初始化，故加判空条件解除影响
         if (todoList.length) {
             dispatch({
@@ -51,7 +52,7 @@ const TodoList: FC = (): ReactElement => {
     }, [])
 
     return (
-        <>
+        <div className="todo">
             <TdInput
                 addTodo={addTodo}
                 todoList={state.todoList}
@@ -61,7 +62,7 @@ const TodoList: FC = (): ReactElement => {
                 removeTodo={removeTodo}
                 toggleTodo={toggleTodo}
             />
-        </>
+        </div>
     )
 }
 

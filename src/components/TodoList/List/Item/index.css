@@ -1,0 +1,19 @@
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.item-checkbox {
+    width: 5%;
+}
+
+.item-text {
+    width: 75%;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+.delete-button {
+    width: 15%;
+}
